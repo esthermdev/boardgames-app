@@ -1,13 +1,31 @@
+import { Row } from 'reactstrap';
 import { useSelector } from 'react-redux';
 import { selectEventsByFeatured } from './eventsSlice';
 import { Card, CardBody, CardSubtitle, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
 
 const FeaturedEvents = () => {
     const featuredEvents = useSelector(selectEventsByFeatured);
+    const isLoading = useSelector((state) => state.events.isLoading)
+    const errMsg = useSelector((state) => state.events.errMsg);
+    
+    let content = null;
 
-    return(
-        <>
-        <h1 style={{ color: '#fff', textShadow: '1px 1px 1px black' }} className='text-center'>Featured Events</h1>
+    if (isLoading) {
+        content = (
+            <Row className='text-info'>
+                <Loading />
+            </Row>
+        );
+    } else if (errMsg) {
+        content = (
+            <Row style={{textShadow: '1px 1px black'}} className='text-danger'>
+                <Error errMsg={errMsg} />
+            </Row>
+        );
+    } else {
+        content = (
             <Card className='m-5'>
                 <ListGroup>
                     {featuredEvents.map((event) => (
@@ -22,6 +40,13 @@ const FeaturedEvents = () => {
                     ))}
                 </ListGroup>
             </Card>
+        );
+    };
+
+    return (
+        <>
+            <h1 style={{ color: '#fff', textShadow: '1px 1px 1px black' }} className='text-center'>Featured Events</h1>
+            {content}
         </>
     );
 }

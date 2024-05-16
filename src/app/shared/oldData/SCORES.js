@@ -2,7 +2,7 @@ export const SCORES = [
   {
     id: 0,
     date: '2023-03-15',
-    gameId: 1,
+    gameId: 0,
     playerScores: [
       { name: 'Alice', score: 75 },
       { name: 'Bob', score: 88 },
@@ -74,9 +74,9 @@ export const SCORES = [
     ]
   },
   {
-    id: 8,
+    id: 7,
     date: '2022-07-10',
-    gameId: 4,
+    gameId: 5,
     playerScores: [
       { name: 'Frank', score: 82 },
       { name: 'Grace', score: 71 },
@@ -84,9 +84,9 @@ export const SCORES = [
     ]
   },
   {
-    id: 9,
+    id: 8,
     date: '2022-06-27',
-    gameId: 4,
+    gameId: 5,
     playerScores: [
       { name: 'Alice', score: 55 },
       { name: 'Bob', score: 48 },

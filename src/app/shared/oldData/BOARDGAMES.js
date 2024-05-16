@@ -1,7 +1,6 @@
 import terraImg from '../assets/terra_mystica.jpg';
 import everdellImg from '../assets/everdell.jpg';
 import splendorImg from '../assets/splendor.jpg';
-import dowImg from '../assets/dead_of_winter.jpg';
 import wingspanImg from '../assets/wingspan.jpg';
 import codenamesImg from '../assets/codenames.jpg';
 import catanImg from '../assets/catan.jpg';
@@ -46,18 +45,6 @@ export const BOARDGAMES = [
     },
     {
         id: 3,
-        name: "Dead of Winter",
-        rating: 7.5,
-        category: "Thematic",
-        players: "2-5",
-        duration: "60-120 minutes",
-        complexity: "Medium",
-        expansions: ["Dead of Winter: The Long Night", "Dead of Winter: Warring Colonies"],
-        description: "Dead of Winter is a cooperative board game designed by Jonathan Gilmour and Isaac Vega. Set in a post-apocalyptic world, players must work together to survive while dealing with crises and hidden objectives.",
-        image: dowImg
-    },
-    {
-        id: 4,
         name: "Wingspan",
         rating: 8.1,
         category: "Strategy",
@@ -69,7 +56,7 @@ export const BOARDGAMES = [
         image: wingspanImg
     },
     {
-        id: 5,
+        id: 4,
         name: "Codenames",
         rating: 7.5,
         category: "Party",
@@ -81,7 +68,7 @@ export const BOARDGAMES = [
         image: codenamesImg
     },
     {
-        id: 6,
+        id: 5,
         name: "Catan",
         rating: 7.1,
         category: "Strategy",
@@ -93,7 +80,7 @@ export const BOARDGAMES = [
         image: catanImg
     },
     {
-        id: 7,
+        id: 6,
         name: "Taboo",
         rating: 6.3,
         category: "Party",

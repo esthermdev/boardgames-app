@@ -5,7 +5,6 @@ import GameDetail from '../features/boardgames/GameDetail';
 import { Container } from 'reactstrap';
 
 const GameDetailPage = () => {
-
     let { gameId } = useParams();
     gameId = parseInt(gameId);
 

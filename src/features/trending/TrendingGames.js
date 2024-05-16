@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createRef } from 'react';
 import { useSelector } from 'react-redux';
 import {
     Container,
@@ -9,9 +9,13 @@ import {
     Row
 } from 'reactstrap';
 import { selectAllTrendingGames } from './trendingSlice';
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
 
 const TrendingGames = () => {
     const trendingGames = useSelector(selectAllTrendingGames);
+    const isLoading = useSelector((state) => state.trending.isLoading);
+    const errMsg = useSelector((state) => state.trending.errMsg);
 
     const [hotGames, setHotGames] = useState([])
     const [activeIndex, setActiveIndex] = useState(0);
@@ -39,6 +43,7 @@ const TrendingGames = () => {
         setActiveIndex(newIndex);
     }
 
+    const carouselItemRefs = hotGames.map(() => createRef());
 
     const slides = hotGames.map((game, index) => {
 
@@ -47,16 +52,32 @@ const TrendingGames = () => {
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
                 key={index}
+                innerRef={carouselItemRefs[index]}
             >
                 <img src={game.thumbnail} alt={game.name} style={{ width: '200px'}}/>
             </CarouselItem>
         );
     });
 
+    if (isLoading) {
+        return (
+            <Row className='text-warning'>
+                <Loading />
+            </Row>
+        );
+    };
 
+    if (errMsg) {
+        return (
+            <Row className='text-warning'>
+                <Error errMsg={errMsg} />
+            </Row>
+        );
+    };
 
     return (
         <Container>
+
             <Row>
                 <Carousel
                     activeIndex={activeIndex}

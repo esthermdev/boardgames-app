@@ -12,5 +12,6 @@ export const store = configureStore({
         trending: trendingReducer,
         events: eventsReducer
     },
+    devTools: true,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([logger])
 })

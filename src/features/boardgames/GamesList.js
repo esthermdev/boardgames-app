@@ -3,9 +3,16 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import GameCard from './GameCard';
 import { selectAllBoardgames } from './gamesSlice';
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
 
 const GamesList = () => {
     const boardgames = useSelector(selectAllBoardgames);
+    console.log("boardgames:", boardgames);
+
+    const isLoading = useSelector((state) => state.boardgames.isLoading);
+    const errMsg = useSelector((state) => state.boardgames.errMsg);
+
     const [categoryFilter, setCategoryFilter] = useState("All");
 
     let filteredGames;
@@ -13,6 +20,22 @@ const GamesList = () => {
         filteredGames = boardgames;
     } else {
         filteredGames = boardgames.filter(game => game.category === categoryFilter)
+    };
+
+    if (isLoading) {
+        return (
+            <Row>
+                <Loading />
+            </Row>
+        );
+    };
+
+    if (errMsg) {
+        return (
+            <Row className='text-danger'>
+                <Error errMsg={errMsg} />
+            </Row>
+        );
     };
 
     return (
