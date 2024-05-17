@@ -1,5 +1,6 @@
 // import { BOARDGAMES } from '../../app/shared/BOARDGAMES';
-import { baseUrl } from '../../app/shared/baseUrl.js';
+import { db } from '../../firebase.config';
+import { collection, getDocs } from 'firebase/firestore';
 import { mapImageURL } from '../../utils/mapImageURL';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
@@ -7,12 +8,12 @@ import { createSelector } from 'reselect';
 export const fetchBoardgames = createAsyncThunk(
     'boardgames/fetchBoardgames',
     async () => {
-        const response = await fetch(baseUrl + 'boardgames'); // edit this line to get data from firestore
-        if (!response.ok) {
-            return Promise.reject('Unable to fetch, status: ' + response.status);
-        }
-        const data = await response.json();
-        return data;
+        const querySnapshot = await getDocs(collection(db, 'boardgames')); // edit this line to get data from firestore
+        const boardgames = [];
+        querySnapshot.forEach((doc) => {
+            boardgames.push(doc.data());
+        })
+        return boardgames;
     }
 );
 

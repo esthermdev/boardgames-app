@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Nav, Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../app/assets/logo.png';
+import logo from '../app/assets/img/logo.png';
 import SearchBar from '../components/SearchBar';
 
 const Header = () => {

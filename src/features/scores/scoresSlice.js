@@ -1,17 +1,18 @@
 // import { SCORES } from '../../app/shared/SCORES';
+import { db } from '../../firebase.config';
+import { collection, getDocs } from 'firebase/firestore';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
-import { baseUrl } from '../../app/shared/baseUrl.js';
 
 export const fetchScores = createAsyncThunk(
     'scores/fetchScores',
     async () => {
-        const response = await fetch(baseUrl + 'scores'); // edit this line to get data from firestore
-        if (!response.ok) {
-            return Promise.reject('Unable to fetch, status: ' + response.status);
-        }
-        const data = await response.json();
-        return data;
+        const querySnapshot = await getDocs(collection(db, 'scores')); // edit this line to get data from firestore
+        const scores = [];
+        querySnapshot.forEach((doc) => {
+            scores.push(doc.data());
+        })
+        return scores;
     }
 );
 

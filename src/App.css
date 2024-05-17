@@ -1,5 +1,5 @@
 .homepage-background {
-  background-image: url('./app/assets/homepage_background.jpg');
+  background-image: url('./app/assets/img/homepage_background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 550px;
@@ -7,7 +7,7 @@
 }
 
 .featured-events-background {
-  background-image: url('./app/assets/featured-events.jpg');
+  background-image: url('./app/assets/img/featured-events.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }

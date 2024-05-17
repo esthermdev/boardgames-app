@@ -1,16 +1,17 @@
 // import { TRENDING } from '../../app/shared/TRENDING';
+import { db } from '../../firebase.config';
+import { collection, getDocs } from 'firebase/firestore';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { baseUrl } from '../../app/shared/baseUrl.js';
 
 export const fetchTrending = createAsyncThunk(
     'trending/fetchTrending',
     async () => {
-        const response = await fetch(baseUrl + 'trending'); // edit this line to get data from firestore
-        if (!response.ok) {
-            return Promise.reject('Unable to fetch, status: ' + response.status);
-        }
-        const data = await response.json();
-        return data;
+        const querySnapshot = await getDocs(collection(db, 'trending')); // edit this line to get data from firestore
+        const trending = [];
+        querySnapshot.forEach((doc) => {
+            trending.push(doc.data());
+        })
+        return trending;
     }
 );
 
