@@ -27,8 +27,6 @@ const scoresSlice = createSlice({
     initialState,
     reducers: {
         addScore: (state, action) => {
-            console.log('addScore action.payload', action.payload);
-            console.log('addScore state.commentsArray:', state.scoresArray);
             const newScore = {
                 id: state.scoresArray.length + 1,
                 ...action.payload

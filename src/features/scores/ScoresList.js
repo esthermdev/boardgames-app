@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import ScoreForm from './ScoreForm';
 import ScoreTable from './ScoreTable';
 
-const ScoresList = ({ gameScores, gameId, gameName }) => {
+const ScoresList = ({ gameScores, gameId, gameName, gameType, scoringType }) => {
 
     if (gameId === null) {
         return (
@@ -14,14 +14,23 @@ const ScoresList = ({ gameScores, gameId, gameName }) => {
     }
 
     return (
-        <Container>
+        <Container className="d-flex justify-content-center">
             <Row>
-                <Col>
+                <Col className='text-center'>
                     <h2 className='text-center mt-3'>{gameName}</h2>
-                    <ScoreForm gameId={gameId} />
+                    <ScoreForm 
+                        gameId={gameId} 
+                        gameType={gameType}
+                        scoringType={scoringType}
+                    />
                     {gameScores && gameScores.length > 0 ? (
                         gameScores.map((scores) => (
-                            <ScoreTable key={scores.date} scores={scores} />
+                            <ScoreTable 
+                                key={scores.id} 
+                                scores={scores}
+                                gameType={scores.gameType}
+                                scoringType={scores.scoringType}
+                            />
                         ))
                     ) : (
                         <div>
