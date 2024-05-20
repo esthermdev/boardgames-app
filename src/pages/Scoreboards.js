@@ -42,8 +42,11 @@ const Scoreboards = () => {
         const gameDetails = getGameDetailsByGameId(selectedGameId);
         content = (
             <>
-                <h5 className='my-3' >Choose a game to view your scores!</h5>
-                <ScoresDropdown boardgames={boardgames} onGameSelect={handleGameSelect} />
+                <h5 className='my-4' >Choose a game to view your scores!</h5>
+                <ScoresDropdown 
+                    boardgames={boardgames} 
+                    onGameSelect={handleGameSelect} 
+                />
                 <ScoresList 
                     gameScores={gameScores} 
                     gameName={gameDetails.name} 

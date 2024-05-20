@@ -10,9 +10,9 @@ import GameDetailPage from './pages/GameDetailPage';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import Scoreboards from './pages/Scoreboards';
+import ScoresList from './features/scores/ScoresList';
 import './App.css';
 import { fetchTrending } from './features/trending/trendingSlice';
-
 
 function App() {
 	const dispatch = useDispatch();
@@ -32,7 +32,7 @@ function App() {
 					<Route path='/boardgames' element={ <MyBoardgames /> } />
 					<Route path='/random' element={ <RandomPage /> } />
 					<Route path='/scoreboards' element={ <Scoreboards /> } />
-					<Route path='/games/:gameId' element={ <GameDetailPage /> } />
+					<Route path='/boardgames/:gameId' element={ <GameDetailPage /> } />
 				</Routes>
 		</div>
 	);

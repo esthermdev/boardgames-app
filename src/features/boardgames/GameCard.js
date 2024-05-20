@@ -9,7 +9,7 @@ function GameCard({ game }) {
                 <CardBody>
                     <CardTitle tag='h5'>{game.name}</CardTitle>
                     <CardSubtitle className='mb-2 text-muted'>{game.category}</CardSubtitle>
-                    <Link to={`/games/${game.id}`}>Details</Link>
+                    <Link to={`/boardgames/${game.id}`}>Details</Link>
                 </CardBody>
             </Card>
         </Col>

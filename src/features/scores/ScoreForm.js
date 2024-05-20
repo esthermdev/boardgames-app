@@ -62,25 +62,23 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                     {({ remove, push, form }) => (
                                         <div>
                                             {form.values.playerScores.length > 0 && form.values.playerScores.map((player, index) => (
-                                                <div key={index}>
-                                                    <div className='d-flex justify-content-between'>
-                                                        <FormGroup>
-                                                            <Label htmlFor={`playerScores.${index}.name`}>Player Name</Label>
-                                                            <Field name={`playerScores.${index}.name`} type='text' placeholder='e.g. John Doe' className='form-control'/>
-                                                            <ErrorMessage name={`playerScores.${index}.name`} component="div" className="text-danger" />
-                                                        </FormGroup>
-                                                        <FormGroup>
-                                                            <Label htmlFor={`playerScores.${index}.score`}>Player Score</Label>
-                                                            <Field name={`playerScores.${index}.score`} type='number' placeholder='e.g. 42' className='form-control'/>
-                                                            <ErrorMessage name={`playerScores.${index}.score`} component="div" className="text-danger" />
-                                                        </FormGroup>                                                       
-                                                    </div>
-                                                    <div className="d-flex justify-content-end my-2">
-                                                        <Button type='button' size='sm' className='mx-2' onClick={() => push({ name: '', score: '' })}>Add Player</Button>
-                                                        <Button type='button' size='sm' className='btn btn-danger'  onClick={() => { if (index > 0) remove(index) }}>Remove</Button>
-                                                    </div>
+                                                <div key={index} className='d-flex'>
+                                                    <FormGroup className='flex-grow-1'>
+                                                        <Label htmlFor={`playerScores.${index}.name`}>Player Name</Label>
+                                                        <Field name={`playerScores.${index}.name`} type='text' placeholder='e.g. John Doe' className='form-control'/>
+                                                        <ErrorMessage name={`playerScores.${index}.name`} component="div" className="text-danger" />
+                                                    </FormGroup>
+                                                    <FormGroup className='mx-1'>
+                                                        <Label htmlFor={`playerScores.${index}.score`}>Player Score</Label>
+                                                        <Field name={`playerScores.${index}.score`} type='number' placeholder='e.g. 42' className='form-control'/>
+                                                        <ErrorMessage name={`playerScores.${index}.score`} component="div" className="text-danger" />
+                                                    </FormGroup>
+                                                    <Button type='button' onClick={() => { if (index > 0) remove(index) }} size='sm' className='btn-danger my-3'>-</Button>                                   
                                                 </div>
                                             ))}
+                                            <div className='d-flex justify-content-end'>
+                                                <Button type='button' size='sm' onClick={() => push({ name: '', score: '' })}>Add Player</Button>
+                                            </div>
                                         </div>
                                     )}
                                 </FieldArray>
@@ -91,64 +89,28 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                     {({ remove, push, form }) => (
                                         <div>
                                             {form.values.playerScores.map((player, index) => (
-                                                <div key={index}>
-                                                    <div className='d-flex justify-content-between'>
-                                                        <FormGroup>
-                                                            <Label htmlFor={`playerScores.${index}.name`}>Player Name</Label>
-                                                            <Field name={`playerScores.${index}.name`} type='text' placeholder='e.g. John Doe' className='form-control'/>
-                                                            <ErrorMessage name={`playerScores.${index}.name`} component="div" className="text-danger" />
-                                                        </FormGroup>
-                                                        <FormGroup>
-                                                            <Label htmlFor={`playerScores.${index}.result`}>Result</Label>
-                                                            <Field name={`playerScores.${index}.result`} as='select'  className='form-control'>
-                                                                <option value='' disabled>Select a result</option>
-                                                                <option value='Win'>Win</option>
-                                                                <option value='Lose'>Lose</option>
-                                                                <option value='Draw'>Draw</option>
-                                                            </Field>
-                                                            <ErrorMessage name={`playerScores.${index}.result`} component="div" className="text-danger" />
-                                                        </FormGroup>
-                                                    </div>
-                                                    <div className='d-flex justify-content-end my-2'>
-                                                        <Button type='button' size='sm' className='mx-2' onClick={() => push({ name: '', result: '' })}>Add Player</Button>
-                                                        <Button type='button' size='sm' className='btn btn-danger' onClick={() => { if (index > 0) remove(index) }}>Remove</Button>
-                                                    </div>
+                                                <div key={index} className='d-flex'>
+                                                    <FormGroup className='flex-grow-1'>
+                                                        <Label htmlFor={`playerScores.${index}.name`}>Player Name</Label>
+                                                        <Field name={`playerScores.${index}.name`} type='text' placeholder='e.g. John Doe' className='form-control'/>
+                                                        <ErrorMessage name={`playerScores.${index}.name`} component="div" className="text-danger" />
+                                                    </FormGroup>
+                                                    <FormGroup className='mx-1'>
+                                                        <Label htmlFor={`playerScores.${index}.result`}>Result</Label>
+                                                        <Field name={`playerScores.${index}.result`} as='select'  className='form-control'>
+                                                            <option value='' disabled>Select a result</option>
+                                                            <option value='Win'>Win</option>
+                                                            <option value='Lose'>Lose</option>
+                                                            <option value='Draw'>Draw</option>
+                                                        </Field>
+                                                        <ErrorMessage name={`playerScores.${index}.result`} component="div" className="text-danger" />
+                                                    </FormGroup>
+                                                    <Button type='button' size='sm' className='btn-danger my-3' onClick={() => { if (index > 0) remove(index) }}>-</Button>
                                                 </div>
                                             ))}
-                                        </div>
-                                    )}
-                                </FieldArray>
-                            )}
-
-                            {gameType === 'team' && scoringType === 'win-lose-draw' && (
-                                <FieldArray name='teamScores'>
-                                    {({ remove, push, form }) => (
-                                        <div>
-                                            {form.values.teamScores.map((team, index) => (
-                                                <div key={index}>
-                                                    <div className='d-flex justify-content-between'>
-                                                        <FormGroup>
-                                                            <Label htmlFor={`teamScores.${index}.team`}>Team Name</Label>
-                                                            <Field name={`teamScores.${index}.team`} type='text' placeholder='e.g. Team A' className='form-control'/>
-                                                            <ErrorMessage name={`teamScores.${index}.team`} component="div" className="text-danger" />
-                                                        </FormGroup>
-                                                        <FormGroup>
-                                                            <Label htmlFor={`playerScores.${index}.result`}>Result</Label>
-                                                            <Field name={`teamScores.${index}.result`} as='select' className='form-control'>
-                                                                <option value='' disabled>Select a result</option>
-                                                                <option value='Win'>Win</option>
-                                                                <option value='Lose'>Lose</option>
-                                                                <option value='Draw'>Draw</option>
-                                                            </Field>
-                                                            <ErrorMessage name={`teamScores.${index}.result`} component="div" className="text-danger" /> 
-                                                        </FormGroup>                                                      
-                                                    </div>
-                                                    <div className="d-flex justify-content-end my-2">
-                                                        <Button type='button' size='sm' className='mx-2' onClick={() => push({ team: '', result: '' })}>Add Team</Button>
-                                                        <Button type='button' size='sm' className='btn btn-danger' onClick={() => { if (index > 0) remove(index) }}>Remove</Button>
-                                                    </div>
-                                                </div>
-                                            ))}
+                                            <div className='d-flex justify-content-end'>
+                                                <Button type='button' onClick={() => push({ name: '', score: '' })}>Add Player</Button>
+                                            </div>
                                         </div>
                                     )}
                                 </FieldArray>
@@ -159,31 +121,60 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                     {({ remove, push, form }) => (
                                         <div>
                                             {form.values.teamScores.map((team, index) => (
-                                                <div key={index}>
-                                                    <div className='d-flex justify-content-between'>
-                                                        <FormGroup>
+                                                <div key={index} className='d-flex'>
+                                                        <FormGroup className='flex-grow-1'>
                                                             <Label htmlFor={`teamScores.${index}.team`}>Team Name</Label>
                                                             <Field name={`teamScores.${index}.team`} type='text' placeholder='e.g. Team A' className='form-control'/>
                                                             <ErrorMessage name={`teamScores.${index}.team`} component="div" className="text-danger" />
                                                         </FormGroup>
-                                                        <FormGroup>
+                                                        <FormGroup className='mx-1'>
                                                             <Label htmlFor={`teamScores.${index}.score`}>Team Score</Label>
                                                             <Field name={`teamScores.${index}.score`} type='number' placeholder='e.g. 42' className='form-control'/>
                                                             <ErrorMessage name={`teamScores.${index}.score`} component="div" className="text-danger" />
-                                                        </FormGroup>                                                       
+                                                        </FormGroup>
+                                                        <Button type='button' size='sm' className='btn-danger my-3' onClick={() => { if (index > 0) remove(index) }}>-</Button>                                                       
                                                     </div>
-                                                    <div className="d-flex justify-content-end my-2">
-                                                        <Button type='button' size='sm' className='mx-2' onClick={() => push({ team: '', score: '' })}>Add Team</Button>
-                                                        <Button type='button' size='sm' className='btn btn-danger' onClick={() => { if (index > 0) remove(index) }}>Remove</Button>
-                                                    </div>
-                                                </div>
                                             ))}
+                                            <div className='d-flex justify-content-end'>
+                                                <Button type='button' size='sm' onClick={() => push({ team: '', score: '' })}>Add Team</Button>
+                                            </div>
                                         </div>
                                     )}
                                 </FieldArray>
                             )}
-                            
-                            <Button type='submit' style={{ display: 'block', marginRight: 'auto' }} color='btn btn-primary'>Submit</Button>
+
+                            {gameType === 'team' && scoringType === 'win-lose-draw' && (
+                                <FieldArray name='teamScores'>
+                                    {({ remove, push, form }) => (
+                                        <div>
+                                            {form.values.teamScores.map((team, index) => (
+                                                <div key={index} className='d-flex'>
+                                                        <FormGroup className='flex-grow-1'>
+                                                            <Label htmlFor={`teamScores.${index}.team`}>Team Name</Label>
+                                                            <Field name={`teamScores.${index}.team`} type='text' placeholder='e.g. Team A' className='form-control'/>
+                                                            <ErrorMessage name={`teamScores.${index}.team`} component="div" className="text-danger" />
+                                                        </FormGroup>
+                                                        <FormGroup className='mx-1'>
+                                                            <Label htmlFor={`playerScores.${index}.result`}>Result</Label>
+                                                            <Field name={`teamScores.${index}.result`} as='select' className='form-control'>
+                                                                <option value='' disabled>Select a result</option>
+                                                                <option value='Win'>Win</option>
+                                                                <option value='Lose'>Lose</option>
+                                                                <option value='Draw'>Draw</option>
+                                                            </Field>
+                                                            <ErrorMessage name={`teamScores.${index}.result`} component="div" className="text-danger" /> 
+                                                        </FormGroup>
+                                                        <Button type='button' size='sm' className='btn-danger my-3' onClick={() => { if (index > 0) remove(index) }}>-</Button>                                                      
+                                                </div>
+                                            ))}
+                                            <div className="d-flex justify-content-end">
+                                                <Button type='button' size='sm' onClick={() => push({ team: '', result: '' })}>Add Team</Button>
+                                            </div>
+                                        </div>
+                                    )}
+                                </FieldArray>
+                            )}
+                            <Button type='submit' style={{ display: 'block', marginRight: 'auto' }} color='primary'>Submit</Button>
                         </Form>
                     </Formik>
                 </ModalBody>

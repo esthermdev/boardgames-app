@@ -7,7 +7,7 @@ import { Container } from 'reactstrap';
 const GameDetailPage = () => {
     let { gameId } = useParams();
     gameId = parseInt(gameId);
-
+    
     const game = useSelector(selectBoardgameById(gameId));
 
     if (!game) {
