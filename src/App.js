@@ -30,9 +30,10 @@ function App() {
 				<Routes>
 					<Route path='/' element={ <HomePage /> }/>
 					<Route path='/boardgames' element={ <MyBoardgames /> } />
+					<Route path='/boardgames/:gameId' element={ <GameDetailPage /> } />
 					<Route path='/random' element={ <RandomPage /> } />
 					<Route path='/scoreboards' element={ <Scoreboards /> } />
-					<Route path='/boardgames/:gameId' element={ <GameDetailPage /> } />
+					<Route path='/scoreboards/:gameId' element={ <ScoresList /> } />
 				</Routes>
 		</div>
 	);

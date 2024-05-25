@@ -1,10 +1,7 @@
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-const ScoresDropdown = ({ onGameSelect, boardgames }) => {
-
-    const handleGameSelect = (gameId) => {
-        onGameSelect(gameId);
-    };
+const ScoresDropdown = ({ boardgames }) => {
 
     return (
         <UncontrolledDropdown>
@@ -13,7 +10,9 @@ const ScoresDropdown = ({ onGameSelect, boardgames }) => {
             </DropdownToggle>
             <DropdownMenu>
                 {boardgames.map((game) => (
-                    <DropdownItem key={game.id} onClick={() => handleGameSelect(game.id)}>{game.name}</DropdownItem>
+                    <DropdownItem key={game.id} tag={Link} to={`/scoreboards/${game.id}`}>
+                        {game.name}
+                    </DropdownItem>
                 ))}
             </DropdownMenu>
         </UncontrolledDropdown>

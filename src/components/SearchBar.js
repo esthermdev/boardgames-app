@@ -45,8 +45,8 @@ const SearchBar = () => {
                     <DropdownMenu style={{ width: '100%' }}>
                         {filteredGames.length > 0 ? (
                             filteredGames.map(game => (
-                                <DropdownItem key={game.id} onClick={() => setSearchQuery('')}>
-                                    <Link style={{ textDecoration: 'none', color: 'black' }} to={"/games/" + game.id}>{game.name}</Link>
+                                <DropdownItem key={game.id} onClick={() => setSearchQuery('')} tag={Link} to={"/boardgames/" + game.id}>
+                                    {game.name}
                                 </DropdownItem>
                             ))
                         ) : (

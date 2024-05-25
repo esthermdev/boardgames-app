@@ -24,7 +24,7 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
 
         dispatch(addScore(score));
         setModalOpen(false);
-    }
+    };
 
     return (
         <>
