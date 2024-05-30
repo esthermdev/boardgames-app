@@ -14,7 +14,7 @@ const ScoresList = () => {
 
     const gameDetails = useSelector(selectBoardgameById(gameId));
     const gameScores = useSelector(selectScoresByBoardgameId(gameId));
-    
+
     const { name, type, scoring } = gameDetails;
 
     if (gameId === null) {
@@ -37,7 +37,7 @@ const ScoresList = () => {
                     /> 
                     {gameScores && gameScores.length > 0 ? (
                         gameScores.map((scores) => (
-                            <ScoreTable 
+                            <ScoreTable
                                 key={scores.id} 
                                 scores={scores}
                                 gameType={scores.gameType}

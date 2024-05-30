@@ -8,6 +8,7 @@ import Error from '../components/Error';
 const Scoreboards = () => {
 
     const boardgames = useSelector(selectAllBoardgames);
+    
     const isLoading = useSelector((state) => state.scores.isLoading);
     const errMsg = useSelector((state) => state.scores.errMsg);
     let content = null;
