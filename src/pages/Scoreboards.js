@@ -28,7 +28,7 @@ const Scoreboards = () => {
     } else {
         content = (
             <>
-                <h5 className='my-4' >Choose a game to view your scores!</h5>
+                <h5 className='my-4 lead' >Choose a game to view your scores!</h5>
                 <ScoresDropdown boardgames={boardgames}/>
             </>
         );

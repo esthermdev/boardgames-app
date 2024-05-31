@@ -5,7 +5,7 @@ const ScoreTable = ({ scores, gameType, scoringType }) => {
     const { date, playerScores, teamScores } = scores;
 
     return (
-            <Card className='m-5' style={{ width: '40rem' }}>
+            <Card className='m-3' style={{ width: '40rem' }}>
                 <CardBody>
                     <CardTitle tag='h6' style={{ fontSize: '1.5rem' }}>
                         {date}

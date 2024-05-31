@@ -29,7 +29,7 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
     return (
         <>
             <Container className='text-center'>
-                <Button outline style={{ marginTop: '20px' }} onClick={() => {setModalOpen(true)}}>
+                <Button outline style={{ marginTop: '15px' }} onClick={() => {setModalOpen(true)}}>
                     <FontAwesomeIcon icon={faPenToSquare} /> Add Score
                 </Button>
             </Container>
@@ -66,14 +66,14 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                                     <FormGroup className='flex-grow-1'>
                                                         <Label htmlFor={`playerScores.${index}.name`}>Player Name</Label>
                                                         <Field name={`playerScores.${index}.name`} type='text' placeholder='e.g. John Doe' className='form-control'/>
-                                                        <ErrorMessage name={`playerScores.${index}.name`} component="div" className="text-danger" />
+                                                        <ErrorMessage name={`playerScores.${index}.name`} component='div' className="text-danger" />
                                                     </FormGroup>
-                                                    <FormGroup className='mx-1'>
+                                                    <FormGroup className='mx-2'>
                                                         <Label htmlFor={`playerScores.${index}.score`}>Player Score</Label>
                                                         <Field name={`playerScores.${index}.score`} type='number' placeholder='e.g. 42' className='form-control'/>
-                                                        <ErrorMessage name={`playerScores.${index}.score`} component="div" className="text-danger" />
+                                                        <ErrorMessage name={`playerScores.${index}.score`} component='div' className="text-danger" />
                                                     </FormGroup>
-                                                    <Button type='button' onClick={() => { if (index > 0) remove(index) }} size='sm' className='btn-danger my-3'>-</Button>                                   
+                                                    <Button type='button' onClick={() => { if (index > 0) remove(index) }} size='sm' className='btn-danger align-self-center'>-</Button>                                   
                                                 </div>
                                             ))}
                                             <div className='d-flex justify-content-end'>
@@ -95,7 +95,7 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                                         <Field name={`playerScores.${index}.name`} type='text' placeholder='e.g. John Doe' className='form-control'/>
                                                         <ErrorMessage name={`playerScores.${index}.name`} component="div" className="text-danger" />
                                                     </FormGroup>
-                                                    <FormGroup className='mx-1'>
+                                                    <FormGroup className='mx-2'>
                                                         <Label htmlFor={`playerScores.${index}.result`}>Result</Label>
                                                         <Field name={`playerScores.${index}.result`} as='select'  className='form-control'>
                                                             <option value='' disabled>Select a result</option>
@@ -105,7 +105,7 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                                         </Field>
                                                         <ErrorMessage name={`playerScores.${index}.result`} component="div" className="text-danger" />
                                                     </FormGroup>
-                                                    <Button type='button' size='sm' className='btn-danger my-3' onClick={() => { if (index > 0) remove(index) }}>-</Button>
+                                                    <Button type='button' size='sm' className='btn-danger align-self-center' onClick={() => { if (index > 0) remove(index) }}>-</Button>
                                                 </div>
                                             ))}
                                             <div className='d-flex justify-content-end'>
@@ -127,12 +127,12 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                                             <Field name={`teamScores.${index}.team`} type='text' placeholder='e.g. Team A' className='form-control'/>
                                                             <ErrorMessage name={`teamScores.${index}.team`} component="div" className="text-danger" />
                                                         </FormGroup>
-                                                        <FormGroup className='mx-1'>
+                                                        <FormGroup className='mx-2'>
                                                             <Label htmlFor={`teamScores.${index}.score`}>Team Score</Label>
                                                             <Field name={`teamScores.${index}.score`} type='number' placeholder='e.g. 42' className='form-control'/>
                                                             <ErrorMessage name={`teamScores.${index}.score`} component="div" className="text-danger" />
                                                         </FormGroup>
-                                                        <Button type='button' size='sm' className='btn-danger my-3' onClick={() => { if (index > 0) remove(index) }}>-</Button>                                                       
+                                                        <Button type='button' size='sm' className='btn-danger align-self-center' onClick={() => { if (index > 0) remove(index) }}>-</Button>                                                       
                                                     </div>
                                             ))}
                                             <div className='d-flex justify-content-end'>
@@ -154,7 +154,7 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                                             <Field name={`teamScores.${index}.team`} type='text' placeholder='e.g. Team A' className='form-control'/>
                                                             <ErrorMessage name={`teamScores.${index}.team`} component="div" className="text-danger" />
                                                         </FormGroup>
-                                                        <FormGroup className='mx-1'>
+                                                        <FormGroup className='mx-2'>
                                                             <Label htmlFor={`playerScores.${index}.result`}>Result</Label>
                                                             <Field name={`teamScores.${index}.result`} as='select' className='form-control'>
                                                                 <option value='' disabled>Select a result</option>
@@ -164,7 +164,7 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
                                                             </Field>
                                                             <ErrorMessage name={`teamScores.${index}.result`} component="div" className="text-danger" /> 
                                                         </FormGroup>
-                                                        <Button type='button' size='sm' className='btn-danger my-3' onClick={() => { if (index > 0) remove(index) }}>-</Button>                                                      
+                                                        <Button type='button' size='sm' className='btn-danger align-self-center' onClick={() => { if (index > 0) remove(index) }}>-</Button>                                                      
                                                 </div>
                                             ))}
                                             <div className="d-flex justify-content-end">

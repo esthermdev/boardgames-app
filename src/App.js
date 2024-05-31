@@ -10,7 +10,7 @@ import GameDetailPage from './pages/GameDetailPage';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import Scoreboards from './pages/Scoreboards';
-import ScoresList from './features/scores/ScoresList';
+import ScoresDetailPage from './features/scores/ScoresDetailPage';
 import './App.css';
 import { fetchTrending } from './features/trending/trendingSlice';
 
@@ -33,7 +33,7 @@ function App() {
 					<Route path='/boardgames/:gameId' element={ <GameDetailPage /> } />
 					<Route path='/random' element={ <RandomPage /> } />
 					<Route path='/scoreboards' element={ <Scoreboards /> } />
-					<Route path='/scoreboards/:gameId' element={ <ScoresList /> } />
+					<Route path='/scoreboards/:gameId' element={ <ScoresDetailPage /> } />
 				</Routes>
 		</div>
 	);
