@@ -30,7 +30,7 @@ const SearchBar = () => {
 
 
     return (
-        <InputGroup size='sm' style={{ width: '200px', margin: '10px' }}>
+        <InputGroup size='sm' style={{ width: '200px', margin: '20px 20px'}}>
             <Input
                 name='search'
                 placeholder='Search'

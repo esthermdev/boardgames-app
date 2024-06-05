@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 firebase.config.js
+
+# backend-server/
+backend-server/node_modules
+
+# firebase service account key
+backend-server//boardgame-shelf-160524-firebase-adminsdk-qkogs-7cf0f66a53.json
+

@@ -3,6 +3,7 @@ import { Nav, Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../app/assets/img/logo.png';
 import SearchBar from '../components/SearchBar';
+import UserLoginForm from '../features/user/UserLoginForm';
 
 const Header = () => {
     const [expanded, setExpanded] = useState(false);
@@ -31,6 +32,7 @@ const Header = () => {
                         <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/scoreboards">Scoreboards</Nav.Link>
                     </Nav>
                     <SearchBar />
+                    <UserLoginForm />
                 </Navbar.Collapse>
             </Container>
         </Navbar>
