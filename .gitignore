@@ -28,5 +28,7 @@ firebase.config.js
 backend-server/node_modules
 
 # firebase service account key
-backend-server//boardgame-shelf-160524-firebase-adminsdk-qkogs-7cf0f66a53.json
+backend-server/boardgame-shelf-160524-firebase-adminsdk-qkogs-f3a9773d94.json
+
+backend-server/.env
 

@@ -10,33 +10,31 @@ import {
     Button
 } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import defaultAvatar from '../../app/assets/img/avatar.png';
+import defaultAvatar from '../../app/assets/img/kitten.png';
 import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
 
 const UserLoginForm = () => {
     const [loginModalOpen, setLoginModalOpen] = useState(false);
-
     const currentUser = useSelector(selectCurrentUser);
-
     const dispatch = useDispatch();
 
     const handleLogin = (values) => {
-        const currentUser = {
+        const user = {
             id: Date.now(),
-            avatar: defaultAvatar,
+            avatar: defaultAvatar, // Replace with your default avatar path
             username: values.username,
             password: values.password
-        }
-        dispatch(setCurrentUser(currentUser))
+        };
+        dispatch(setCurrentUser(user));
         setLoginModalOpen(false);
     }
 
-    console.log(currentUser);
+    console.log('Current User:', currentUser);
 
     return (
         <>
             <span className='navbar-text ml-auto'>
-                { currentUser ? (
+                {currentUser ? (
                     <div className="d-flex align-items-center" style={{ width: '3rem', height: '3rem' }}>
                         <img 
                             src={currentUser.avatar}
@@ -56,7 +54,7 @@ const UserLoginForm = () => {
                 )}
             </span>
             <Modal isOpen={loginModalOpen}>
-                <ModalHeader toggle={() => {setLoginModalOpen(false)}}>Login</ModalHeader>
+                <ModalHeader toggle={() => (setLoginModalOpen(false))}>Login</ModalHeader>
                 <ModalBody>
                     <Formik
                         initialValues={{
@@ -80,11 +78,12 @@ const UserLoginForm = () => {
                                 </ErrorMessage>
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor='password'></Label>
+                                <Label htmlFor='password'>Password</Label>
                                 <Field 
                                     id='password'
                                     name='password'
                                     placeholder='Password'
+                                    type='password'
                                     className='form-control'
                                 />
                                 <ErrorMessage name='password'>

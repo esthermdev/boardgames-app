@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { fetchBoardgames } from './features/boardgames/gamesSlice';
 import { fetchScores } from './features/scores/scoresSlice';
 import { fetchEvents } from './features/events/eventsSlice';
+import { fetchTrending } from './features/trending/trendingSlice';
 import MyBoardgames from './pages/MyBoardgames';
 import RandomPage from './pages/RandomPage'; 
 import GameDetailPage from './pages/GameDetailPage';
@@ -12,7 +13,7 @@ import HomePage from './pages/HomePage';
 import Scoreboards from './pages/Scoreboards';
 import ScoresDetailPage from './features/scores/ScoresDetailPage';
 import './App.css';
-import { fetchTrending } from './features/trending/trendingSlice';
+
 
 function App() {
 	const dispatch = useDispatch();
