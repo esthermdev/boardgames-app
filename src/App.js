@@ -13,6 +13,7 @@ import HomePage from './pages/HomePage';
 import Scoreboards from './pages/Scoreboards';
 import ScoresDetailPage from './features/scores/ScoresDetailPage';
 import './App.css';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 					<Route path='/scoreboards' element={ <Scoreboards /> } />
 					<Route path='/scoreboards/:gameId' element={ <ScoresDetailPage /> } />
 				</Routes>
+			<Footer />
 		</div>
 	);
 }

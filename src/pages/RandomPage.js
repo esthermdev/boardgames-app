@@ -19,7 +19,7 @@ const RandomPage = () => {
             <Error errMsg={errMsg}/>
         </Row>
     ) : (
-        <Container style={{ marginTop: '20px' }}>
+        <Container style={{ marginTop: '20px', minHeight: '100vh' }}>
             <h5>You should play...</h5>
             <h2 className='display-1'>{ randomGame.name }</h2>
         </Container>

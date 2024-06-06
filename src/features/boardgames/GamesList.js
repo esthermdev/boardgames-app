@@ -5,6 +5,7 @@ import GameCard from './GameCard';
 import { selectAllBoardgames } from './gamesSlice';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import AddBoardgame from './AddBoardgame';
 
 const GamesList = () => {
     const boardgames = useSelector(selectAllBoardgames);
@@ -41,12 +42,13 @@ const GamesList = () => {
     return (
         <>
             <Container>
-                <div className='d-flex justify-content-center m-4'>
+                <div className='d-flex justify-content-center m-2'>
                     <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("All")}>All</button>
                     <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("Family")}>Family</button>
                     <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("Strategy")}>Strategy</button>
                     <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("Party")}>Party</button>
                 </div>
+                <AddBoardgame />
             </Container>
             <Container>
                 <Row>

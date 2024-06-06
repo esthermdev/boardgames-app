@@ -25,7 +25,7 @@ const ScoresDetailPage = () => {
     const { name, type, scoring } = gameDetails;
 
     return (
-        <Container >
+        <Container style={{ minHeight: '100vh' }}>
             <h1 className='text-center display-5 mt-3 pb-3 border-bottom'>{name}</h1>
             <div className='d-flex justify-content-center'>
                 <Row>

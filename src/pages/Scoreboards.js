@@ -35,7 +35,7 @@ const Scoreboards = () => {
     }
 
     return (
-        <Container style={{ marginTop: '20px' }}>
+        <Container style={{ marginTop: '20px', minHeight: '100vh' }}>
             <h1>Scoreboards</h1>
             {content}
         </Container>
