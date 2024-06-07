@@ -1,4 +1,4 @@
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Button } from 'reactstrap';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import GameCard from './GameCard';
@@ -6,10 +6,10 @@ import { selectAllBoardgames } from './gamesSlice';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 import AddBoardgame from './AddBoardgame';
+import RemoveBoardgame from './RemoveBoardgame';
 
 const GamesList = () => {
     const boardgames = useSelector(selectAllBoardgames);
-    console.log("boardgames:", boardgames);
 
     const isLoading = useSelector((state) => state.boardgames.isLoading);
     const errMsg = useSelector((state) => state.boardgames.errMsg);
@@ -41,14 +41,16 @@ const GamesList = () => {
 
     return (
         <>
-            <Container>
-                <div className='d-flex justify-content-center m-2'>
-                    <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("All")}>All</button>
-                    <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("Family")}>Family</button>
-                    <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("Strategy")}>Strategy</button>
-                    <button className='btn btn-primary m-2' onClick={() => setCategoryFilter("Party")}>Party</button>
+            <Container className='text-center'>
+                <Button className='m-2' color='primary' onClick={() => setCategoryFilter("All")}>All</Button>
+                <Button className='m-2' color='primary' onClick={() => setCategoryFilter("Family")}>Family</Button>
+                <Button className='m-2' color='primary' onClick={() => setCategoryFilter("Strategy")}>Strategy</Button>
+                <Button className='m-2' color='primary' onClick={() => setCategoryFilter("Party")}>Party</Button>
+                <div className='d-flex flex-row justify-content-center p-2'>
+                    <AddBoardgame />
+                    <RemoveBoardgame />
                 </div>
-                <AddBoardgame />
+                                  
             </Container>
             <Container>
                 <Row>

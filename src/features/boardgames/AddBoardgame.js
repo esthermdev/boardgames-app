@@ -1,4 +1,4 @@
-import { Container, Row, Col, Input } from 'reactstrap';
+import { Row, Col, Input } from 'reactstrap';
 import { useState } from 'react';
 import { 
     Button, 
@@ -55,12 +55,10 @@ const AddBoardgame = () => {
     };
 
     return (
-        <Container className='d-flex mb-4' onClick={() => setModalOpen(true)}>
-            <Row>
-                <Button>
-                    + Add Boardgame
-                </Button>
-            </Row>
+        <>
+            <Button className='m-2' color='success' onClick={() => setModalOpen(true)}>
+                + Add Boardgame
+            </Button>
             <Modal isOpen={modalOpen} >
                 <ModalHeader toggle={() => (setModalOpen(false))}>Add Boardgame</ModalHeader>
                 <ModalBody>
@@ -136,7 +134,7 @@ const AddBoardgame = () => {
                                             </Row>
                                         ))}
                                         <Col className='mb-3'>
-                                            <Button onClick={() => arrayHelpers.push('')}>+</Button>
+                                            <Button color='info' onClick={() => arrayHelpers.push('')}>+</Button>
                                         </Col>
                                         </>
                                     )}
@@ -192,7 +190,7 @@ const AddBoardgame = () => {
                     </Formik>
                 </ModalBody>
             </Modal>
-        </Container>
+        </>
     );
 };
 
