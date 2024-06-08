@@ -58,6 +58,6 @@ export const { addScore } = scoresSlice.actions;
 export const selectScoresByBoardgameId = (gameId) => createSelector(
     (state) => state.scores.scoresArray,
     (scoresArray) => {
-        return scoresArray.filter((scores) => scores.gameId === parseInt(gameId))
+        return scoresArray.filter((scores) => scores.gameId === gameId)
     }
 );

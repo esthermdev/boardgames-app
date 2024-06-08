@@ -11,7 +11,6 @@ import Loading from '../../components/Loading';
 
 const ScoresDetailPage = () => {
     let { gameId } = useParams();
-    gameId = parseInt(gameId);
 
     const gameDetails = useSelector(selectBoardgameById(gameId));
     const gameScores = useSelector(selectScoresByBoardgameId(gameId));
@@ -32,7 +31,7 @@ const ScoresDetailPage = () => {
                     <Col className='text-center'>
                         <ScoreForm 
                             gameId={gameId} 
-                            gameType={type} 
+                            gameType={type}
                             scoringType={scoring}
                         /> 
                         {gameScores && gameScores.length > 0 ? (

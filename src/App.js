@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { fetchBoardgames } from './features/boardgames/gamesSlice';
+import { fetchBoardgamesThunk, addBoardgameThunk } from './features/boardgames/gamesSlice';
 import { fetchScores } from './features/scores/scoresSlice';
 import { fetchEvents } from './features/events/eventsSlice';
 import { fetchTrending } from './features/trending/trendingSlice';
@@ -20,7 +20,7 @@ function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(fetchBoardgames());
+		dispatch(fetchBoardgamesThunk());
 		dispatch(fetchScores());
 		dispatch(fetchEvents());
 		dispatch(fetchTrending());

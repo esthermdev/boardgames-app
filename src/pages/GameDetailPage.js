@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import { selectBoardgameById } from '../features/boardgames/gamesSlice';
 import GameDetail from '../features/boardgames/GameDetail';
 import { Container } from 'reactstrap';
+import UpdateBoardgame from '../features/boardgames/UpdateBoardgame';
 
 const GameDetailPage = () => {
     let { gameId } = useParams();
-    gameId = parseInt(gameId);
     
     const game = useSelector(selectBoardgameById(gameId));
 
@@ -15,8 +15,9 @@ const GameDetailPage = () => {
     }
 
     return (
-        <Container style={{ marginTop: '20px' }}>
+        <Container style={{ marginTop: '20px', minHeight: '100vh' }}>
             <GameDetail game={game}/>
+            <UpdateBoardgame game={game} />
         </Container>
     );
 }

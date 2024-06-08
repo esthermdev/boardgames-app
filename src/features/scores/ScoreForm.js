@@ -15,13 +15,12 @@ const ScoreForm = ({ gameId, gameType, scoringType }) => {
     const handleSubmit = (values) => {
         const score = {
             date: values.date,
-            gameId: parseInt(gameId),
+            gameId: gameId,
             gameType: gameType,
             scoringType: scoringType,
             playerScores: values.playerScores,
             teamScores: values.teamScores
         };
-
         dispatch(addScore(score));
         setModalOpen(false);
     };

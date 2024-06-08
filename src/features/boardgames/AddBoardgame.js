@@ -14,7 +14,7 @@ import {
     Form,
     FieldArray
 } from 'formik';
-import { addBoardgame } from './gamesSlice';
+import { addBoardgame, addBoardgameThunk } from './gamesSlice';
 import { useDispatch } from 'react-redux';
 
 const AddBoardgame = () => {
@@ -50,7 +50,7 @@ const AddBoardgame = () => {
             description: values.description,
             image: values.image
         };
-        dispatch(addBoardgame(boardgame));
+        dispatch(addBoardgameThunk(boardgame));
         setModalOpen(false);
     };
 
