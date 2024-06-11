@@ -5,15 +5,14 @@ import {
     Field, 
     Form
 } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateBoardgameThunk } from './gamesSlice';
-
+import { selectToken } from '../user/userSlice';
 
 const UpdateBoardgame = ({ game }) => {
     const [modal, setModal] = useState(false);
-
     const dispatch = useDispatch();
-
+    const token = useSelector(selectToken);
     const toggle = () => setModal(!modal);
 
     const { 
@@ -45,7 +44,7 @@ const UpdateBoardgame = ({ game }) => {
             description: values.description
         };
         console.log(updatedBoardgame);
-        dispatch(updateBoardgameThunk({ boardgameId: id, boardgame: updatedBoardgame }));
+        dispatch(updateBoardgameThunk({ boardgameId: id, boardgame: updatedBoardgame, token }));
         toggle();
     };
 

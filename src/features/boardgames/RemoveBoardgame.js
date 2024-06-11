@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, ListGroup, ListGroupItem } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllBoardgames, removeBoardgameThunk } from './gamesSlice';
+import { selectToken } from '../user/userSlice';
 
 const RemoveBoardgame = () => {
     const boardgames = useSelector(selectAllBoardgames);
+    const token = useSelector(selectToken);
     const [modal, setModal] = useState(false);
 
     const handleRemove = (selectedBoardgameId) => {
-        dispatch(removeBoardgameThunk(selectedBoardgameId))
+        dispatch(removeBoardgameThunk({ boardgameId: selectedBoardgameId, token }));
     };
 
     const dispatch = useDispatch();

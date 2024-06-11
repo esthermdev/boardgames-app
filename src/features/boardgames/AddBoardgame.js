@@ -24,6 +24,8 @@ const AddBoardgame = () => {
 
     const dispatch = useDispatch();
 
+    const token = useSelector(selectToken);
+
     const initialValues = {
         duration: '',
         complexity: '',
@@ -52,7 +54,9 @@ const AddBoardgame = () => {
             description: values.description,
             image: values.image
         };
-        dispatch(addBoardgameThunk(boardgame));
+        dispatch(addBoardgameThunk({ boardgame, token }));
+        console.log('Boardgame: ', boardgame);
+        console.log('This is your token:', token);
         setModalOpen(false);
     };
 

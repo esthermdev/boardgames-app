@@ -21,24 +21,24 @@ export const fetchBoardgamesThunk = createAsyncThunk(
 
 export const addBoardgameThunk = createAsyncThunk(
     'boardgames/addBoardgame',
-    async (boardgame) => {
-        const boardgameData = await addBoardgameAPI(boardgame);
+    async ({ boardgame, token }) => {
+        const boardgameData = await addBoardgameAPI(boardgame, token);
         return boardgameData;
     }
 );
 
 export const removeBoardgameThunk = createAsyncThunk(
     'boardgames/removeBoardgame',
-    async (boardgameId) => {
-        await removeBoardgameAPI(boardgameId);
+    async ({ boardgameId, token }) => {
+        await removeBoardgameAPI(boardgameId, token);
         return boardgameId;
     }
 );
 
 export const updateBoardgameThunk = createAsyncThunk(
     'boardgames/updateBoardgame',
-    async ({ boardgameId, boardgame }) => {
-        const updatedBoardgame = await updateBoardgameAPI(boardgameId, boardgame);
+    async ({ boardgameId, boardgame, token }) => {
+        const updatedBoardgame = await updateBoardgameAPI(boardgameId, boardgame , token);
         return updatedBoardgame;
     }
 );

@@ -34,7 +34,7 @@ const UserLoginForm = () => {
         }
     }
 
-    console.log('Token status: ', token)
+    console.log('Token: ', token)
     console.log('Current User:', currentUser);
 
     return (

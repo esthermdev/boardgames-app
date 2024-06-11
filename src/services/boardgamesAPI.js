@@ -6,9 +6,9 @@ const getConfig = (token) => ({
     headers: { Authorization: `Bearer ${token}` }
 });
 
-export const fetchBoardgames = async (token) => {
+export const fetchBoardgames = async () => {
     try {
-        const response = await axios.get(API_URL, getConfig(token));
+        const response = await axios.get(API_URL);
         return response.data;
     } catch (error) {
         console.error('Error fetching boardgames:', error);
@@ -19,7 +19,7 @@ export const fetchBoardgames = async (token) => {
 export const addBoardgame = async (boardgame, token) => {
     try {
         const response = await axios.post(API_URL, boardgame, getConfig(token));
-        return response.data 
+        return response.data;
     } catch (error) {
         console.error('Error adding boardgame:', error);
         throw error;
