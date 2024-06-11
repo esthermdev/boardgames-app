@@ -14,8 +14,10 @@ import {
     Form,
     FieldArray
 } from 'formik';
-import { addBoardgame, addBoardgameThunk } from './gamesSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBoardgameThunk } from './gamesSlice';
+import { selectToken } from '../user/userSlice';
+
 
 const AddBoardgame = () => {
     const [modalOpen, setModalOpen] = useState(false);

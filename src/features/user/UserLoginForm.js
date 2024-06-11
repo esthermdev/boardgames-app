@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentUser, selectCurrentUser } from './userSlice';
+import { setCurrentUser, selectCurrentUser, loginUser, selectToken } from './userSlice';
 import {
     Modal,
-    ModalHeader,
+    ModalHeader, 
     ModalBody,
     FormGroup,
     Label,
@@ -16,19 +16,25 @@ import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
 const UserLoginForm = () => {
     const [loginModalOpen, setLoginModalOpen] = useState(false);
     const currentUser = useSelector(selectCurrentUser);
+    const token = useSelector(selectToken);
     const dispatch = useDispatch();
 
-    const handleLogin = (values) => {
-        const user = {
-            id: Date.now(),
-            avatar: defaultAvatar, // Replace with your default avatar path
-            username: values.username,
-            password: values.password
-        };
-        dispatch(setCurrentUser(user));
-        setLoginModalOpen(false);
+    const handleLogin = async (values) => {
+        try {
+            const currentUser = {
+                username: values.username,
+                password: values.password,
+                avatar: defaultAvatar
+            }
+            await dispatch(loginUser(values)).unwrap();
+            dispatch(setCurrentUser(currentUser));
+            setLoginModalOpen(false);
+        } catch (error) {
+            console.error('Failed to login: ', error);
+        }
     }
 
+    console.log('Token status: ', token)
     console.log('Current User:', currentUser);
 
     return (
