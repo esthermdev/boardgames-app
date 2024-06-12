@@ -7,8 +7,10 @@ import {
 export const loginUser = createAsyncThunk(
     'user/loginUser', 
     async (credentials) => {
-        const user = await loginUserAPI(credentials);
-        return user;
+        const token = await loginUserAPI(credentials);
+        console.log('Token: ', token);
+        console.log('Credentials: ', credentials);
+        return token;
     }
 );
 
