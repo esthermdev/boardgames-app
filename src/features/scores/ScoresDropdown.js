@@ -10,7 +10,7 @@ const ScoresDropdown = ({ boardgames }) => {
             </DropdownToggle>
             <DropdownMenu>
                 {boardgames.map((game) => (
-                    <DropdownItem key={game.id} tag={Link} to={`/scoreboards/${game.id}`}>
+                    <DropdownItem key={game.id} tag={Link} to={`/scores/${game.id}`}>
                         {game.name}
                     </DropdownItem>
                 ))}

@@ -34,8 +34,8 @@ function App() {
 					<Route path='/boardgames' element={ <MyBoardgames /> } />
 					<Route path='/boardgames/:gameId' element={ <GameDetailPage /> } />
 					<Route path='/random' element={ <RandomPage /> } />
-					<Route path='/scoreboards' element={ <Scoreboards /> } />
-					<Route path='/scoreboards/:gameId' element={ <ScoresDetailPage /> } />
+					<Route path='/scores' element={ <Scoreboards /> } />
+					<Route path='/scores/:gameId' element={ <ScoresDetailPage /> } />
 				</Routes>
 			<Footer />
 		</div>

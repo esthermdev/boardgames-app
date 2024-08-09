@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-firebase.config.js
+src/firebase.config.js
 
 # backend-server/
 backend-server/node_modules

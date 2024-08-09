@@ -1,19 +1,15 @@
 // import { EVENTS } from '../../app/shared/oldData/EVENTS.js';
-import { db } from '../../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
 import { mapImageURL } from '../../utils/mapImageURL.js';
+import axios from 'axios';
 
 export const fetchEvents = createAsyncThunk(
     'events/fetchEvents',
     async () => {
-        const querySnapshot = await getDocs(collection(db, 'events')); // edit this line to get data from firestore
-        const events = [];
-        querySnapshot.forEach((doc) => {
-            events.push(doc.data());
-        })
-        return events;
+        const response = await axios.get('/api/events');
+        return response.data;
     }
 );
 

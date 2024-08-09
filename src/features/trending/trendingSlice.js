@@ -1,17 +1,13 @@
 // import { TRENDING } from '../../app/shared/TRENDING';
-import { db } from '../../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 export const fetchTrending = createAsyncThunk(
     'trending/fetchTrending',
     async () => {
-        const querySnapshot = await getDocs(collection(db, 'trending')); // edit this line to get data from firestore
-        const trending = [];
-        querySnapshot.forEach((doc) => {
-            trending.push(doc.data());
-        })
-        return trending;
+        const response = await axios.get('/api/trending');
+        return response.data;
     }
 );
 

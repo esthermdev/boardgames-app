@@ -1,18 +1,14 @@
 // import { SCORES } from '../../app/shared/SCORES';
-import { db } from '../../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
+import axios from 'axios';
 
 export const fetchScores = createAsyncThunk(
     'scores/fetchScores',
     async () => {
-        const querySnapshot = await getDocs(collection(db, 'scores')); // edit this line to get data from firestore
-        const scores = [];
-        querySnapshot.forEach((doc) => {
-            scores.push(doc.data());
-        })
-        return scores;
+        const response = await axios.get('/api/scores');
+        return response.data;
     }
 );
 

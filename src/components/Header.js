@@ -29,7 +29,7 @@ const Header = () => {
                         <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/">Home</Nav.Link>
                         <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/random">Randomizer</Nav.Link>
                         <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/boardgames">Boardgames</Nav.Link>
-                        <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/scoreboards">Scoreboards</Nav.Link>
+                        <Nav.Link onClick={() => setExpanded(false)} as={Link} to="/scores">Scoreboards</Nav.Link>
                     </Nav>
                     <SearchBar />
                     <UserLoginForm />

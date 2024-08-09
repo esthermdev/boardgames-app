@@ -32,13 +32,16 @@ This application fetches data from a Firebase Firestore database. The relevant d
 
 1. Clone the repository.
 2. Install dependencies using `npm install`.
-3. Start the application using `npm start`.
+3. You need to clone the boardgamesServer repository as well and install its dependencies.
+4. Start the boardgamesServer using `npm start`. This allows the app to fetch data on the backend.
+5. Then start the boardgames-app using `npm start`. 
 
 ## Future Enhancements
 
 - Improve the user interface and add more animations.
 - Add user authentication and personalized game recommendations.
 - Integrate more detailed statistics and game reviews.
+- Integrate backend server APIs within the frontend app.
 
 ---
 
