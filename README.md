@@ -1,5 +1,6 @@
 # The Boardgame Shelf
 
+
 ## Project Overview
 
 The Boardgame Shelf is an interactive web application designed to provide board game enthusiasts with detailed information about various board games, including their scores and trending status. Users can explore games, view details, check scoreboards, and get recommendations on what to play next.
@@ -32,9 +33,9 @@ This application fetches data from a Firebase Firestore database. The relevant d
 
 1. Clone the repository.
 2. Install dependencies using `npm install`.
-3. You need to clone the boardgamesServer repository as well and install its dependencies.
+3. You need to clone the [boardgameServer](https://github.com/esthermdev/boardgameServer) repository as well and install its dependencies.
 4. Start the boardgamesServer using `npm start`. This allows the app to fetch data on the backend.
-5. Then start the boardgames-app using `npm start`. 
+5. Then start the boardgames-app using `npm start`.
 
 ## Future Enhancements
 
