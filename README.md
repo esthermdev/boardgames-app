@@ -43,7 +43,7 @@ As a bootcamp capstone project, this application represents both a learning jour
 This application fetches data from a backend server (boardgameServer). The relevant data includes details about board games, scores, and trending information.
 
 **Important Notes:**
-- You need to run the boardgameServer backend project to fetch the data and work with it on the front end.
+- You need to run the **boardgameServer** backend project to fetch the data and work with it on the front end.
 - Working APIs are the CRUD operations for the boardgames route.
 - Users can log in with a username and password (contact the developer for credentials).
 - User authentication is required to perform POST, UPDATE, or DELETE operations on boardgame data.
