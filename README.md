@@ -6,6 +6,20 @@ The Boardgame Shelf is an interactive web application designed to provide board 
 
 **Note:** This project is currently under development.
 
+## Project Background
+
+The Boardgame Shelf was developed as a capstone project during my time at a full-stack web development bootcamp. The implementation leverages various technologies and concepts learned throughout the program, including:
+
+- Modern front-end development with React
+- State management principles using Redux
+- RESTful API design and implementation
+- Database integration with Firebase
+- User authentication and authorization
+- Responsive web design
+- Component-based architecture
+
+As a bootcamp capstone project, this application represents both a learning journey and a foundation for future enhancements. While fully functional, it continues to evolve as I apply new skills and best practices learned since its initial development.
+
 ## Technologies Used
 
 - **React:** For building the user interface.
