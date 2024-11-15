@@ -22,13 +22,13 @@ As a bootcamp capstone project, this application represents both a learning jour
 
 ## Technologies Used
 
-- **React:** For building the user interface.
-- **React Router:** For handling navigation within the application.
-- **Redux Toolkit:** For state management.
-- **Reactstrap:** For Bootstrap components in React.
-- **Firebase Firestore:** For storing and fetching data related to board games and scores.
-- **Firebase:** For backend services including Firestore.
-- **React Spring:** For animations.
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+[![Redux](https://img.shields.io/badge/Redux_Toolkit-593D88?style=for-the-badge&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
+[![Bootstrap](https://img.shields.io/badge/Reactstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://reactstrap.github.io/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![Firestore](https://img.shields.io/badge/Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/docs/firestore)
+[![React Spring](https://img.shields.io/badge/React_Spring-43853D?style=for-the-badge&logo=react&logoColor=white)](https://react-spring.dev/)
 
 ## Features
 
@@ -37,6 +37,20 @@ As a bootcamp capstone project, this application represents both a learning jour
 - **Game Detail Page:** Detailed view of a selected board game.
 - **Random Page:** Random board game suggestion.
 - **Scoreboards Page:** View and manage scores for various board games.
+
+**Screenshots**
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/10a60b78-20b9-4b71-8041-a90a200f83a0" width="400"/></td>
+    <td><img src="https://github.com/user-attachments/assets/51445fc3-17a6-429f-a57a-1c5dd60f618c" width="400"/></td>
+    <td><img src="https://github.com/user-attachments/assets/7e5e2d8b-7373-41ca-a406-f2a5169c119a" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center">Homepage</td>
+    <td align="center">Boardgames Page</td>
+    <td align="center">Scoreboards Page</td>
+  </tr>
+</table>
 
 ## Data Fetching and API
 
